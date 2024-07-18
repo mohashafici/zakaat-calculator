@@ -19,7 +19,7 @@ import AuthenticatedLayout from './components/AuthenticatedLayout';
 const App = () => {
   return (
     <ZakatProvider>
-      <Router>
+      <Router basename="/zakaat-calculator">
         <Routes>
           <Route path="/" element={<GetStarted />} />
           <Route path="/signup" element={<SignUp />} />
@@ -32,6 +32,7 @@ const App = () => {
             <Route path="step3" element={<Step3 />} />
             <Route path="step4" element={<Step4 />} />
             <Route path="step5" element={<Step5 />} />
+            <Route path="learnmore" element={<LearnMore />} /> {/* Add this line */}
             <Route path="*" element={<Navigate to="/home" />} />
           </Route>
         </Routes>
