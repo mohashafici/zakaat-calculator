@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/zakaat-calculator/static/css/main.66449d63.css",
-    "main.js": "/zakaat-calculator/static/js/main.275dc92f.js",
+    "main.js": "/zakaat-calculator/static/js/main.65942ae6.js",
     "static/js/453.8c4571d8.chunk.js": "/zakaat-calculator/static/js/453.8c4571d8.chunk.js",
     "index.html": "/zakaat-calculator/index.html",
     "main.66449d63.css.map": "/zakaat-calculator/static/css/main.66449d63.css.map",
-    "main.275dc92f.js.map": "/zakaat-calculator/static/js/main.275dc92f.js.map",
+    "main.65942ae6.js.map": "/zakaat-calculator/static/js/main.65942ae6.js.map",
     "453.8c4571d8.chunk.js.map": "/zakaat-calculator/static/js/453.8c4571d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.66449d63.css",
-    "static/js/main.275dc92f.js"
+    "static/js/main.65942ae6.js"
   ]
 }
