@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/zakaatcal.github.io/static/css/main.5d2961a5.css",
-    "main.js": "/zakaatcal.github.io/static/js/main.fd2c5a60.js",
-    "static/js/453.8c4571d8.chunk.js": "/zakaatcal.github.io/static/js/453.8c4571d8.chunk.js",
-    "index.html": "/zakaatcal.github.io/index.html",
-    "main.5d2961a5.css.map": "/zakaatcal.github.io/static/css/main.5d2961a5.css.map",
-    "main.fd2c5a60.js.map": "/zakaatcal.github.io/static/js/main.fd2c5a60.js.map",
-    "453.8c4571d8.chunk.js.map": "/zakaatcal.github.io/static/js/453.8c4571d8.chunk.js.map"
+    "main.css": "/zakaat-calculator/static/css/main.5d2961a5.css",
+    "main.js": "/zakaat-calculator/static/js/main.4fc65201.js",
+    "static/js/453.8c4571d8.chunk.js": "/zakaat-calculator/static/js/453.8c4571d8.chunk.js",
+    "index.html": "/zakaat-calculator/index.html",
+    "main.5d2961a5.css.map": "/zakaat-calculator/static/css/main.5d2961a5.css.map",
+    "main.4fc65201.js.map": "/zakaat-calculator/static/js/main.4fc65201.js.map",
+    "453.8c4571d8.chunk.js.map": "/zakaat-calculator/static/js/453.8c4571d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5d2961a5.css",
-    "static/js/main.fd2c5a60.js"
+    "static/js/main.4fc65201.js"
   ]
 }
