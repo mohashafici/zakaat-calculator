@@ -52,7 +52,7 @@ A simple and intuitive Zakaat Calculator application built with React for the fr
 
 ## Demo
 
-Check out the live demo of the app here: [Live Demo](https://test-fe4d7.web.app/)
+Check out the live demo of the app here: [Live Demo](https://mohashafici.github.io/zakaat-calculator/)
 
 ## Getting Started
 
