@@ -33,6 +33,14 @@ A simple and intuitive Zakaat Calculator application built with React for the fr
 
 <img src="./Screenshots/signup1.PNG" alt="Register Page" width="400">
 
+### home page Screen
+
+<img src="./Screenshots/home1.PNG" alt="Login Page" width="400">
+
+### about page Screen
+
+<img src="./Screenshots/aboutmore.PNG" alt="Login Page" width="400">
+
 ### step 2  Page
 
 <img src="./Screenshots/2.PNG" alt="Register Page" width="400">
