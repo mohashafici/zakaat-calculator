@@ -8,6 +8,8 @@ import Step3 from './components/Step3';
 import Step4 from './components/Step4';
 import Step5 from './components/Step5';
 import SignUp from './pages/SignUp';
+import LearnMore from './components/LearnMore'; // Add this line
+
 import SignIn from './pages/SignIn';
 import { ZakatProvider } from './context/ZakatContext';
 import { ToastContainer } from 'react-toastify';
@@ -22,6 +24,7 @@ const App = () => {
           <Route path="/" element={<GetStarted />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/learn-more" element={<LearnMore />} /> {/* Add this route */}
           <Route path="/*" element={<AuthenticatedLayout />}>
             <Route path="home" element={<Home />} />
             <Route path="step1" element={<Step1 />} />
