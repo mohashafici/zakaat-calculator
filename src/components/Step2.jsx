@@ -1,7 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ZakatContext } from '../context/ZakatContext';
 import { toast } from 'react-toastify';
+
+// Mock conversion rates (currency per gram)
+const mockConversionRates = {
+  gold: 60, // Example: 60 currency units per gram of gold
+  silver: 0.80, // Example: 0.80 currency units per gram of silver
+};
 
 const Step2 = () => {
   const {
@@ -19,11 +25,18 @@ const Step2 = () => {
     updateDebts,
   } = useContext(ZakatContext);
 
+  const [goldGrams, setGoldGrams] = useState(0);
+  const [silverGrams, setSilverGrams] = useState(0);
+
   const navigate = useNavigate();
 
   useEffect(() => {
     updateDebts();
-  }, [arrears, bills, longTermDebts, receivables]);
+    const goldValue = goldGrams * mockConversionRates.gold;
+    const silverValue = silverGrams * mockConversionRates.silver;
+    const totalAssetsCalc = goldValue + silverValue + parseFloat(totalAssets);
+    setTotalAssets(totalAssetsCalc);
+  }, [goldGrams, silverGrams]);
 
   const handleCancel = () => {
     navigate('/home');
@@ -35,12 +48,22 @@ const Step2 = () => {
 
   const handleNext = () => {
     updateDebts();
-    if (totalDebts > totalAssets) {
+    const goldValue = goldGrams * mockConversionRates.gold;
+    const silverValue = silverGrams * mockConversionRates.silver;
+    const totalAssetsCalc = goldValue + silverValue + parseFloat(totalAssets);
+    setTotalAssets(totalAssetsCalc);
+    if (totalDebts > totalAssetsCalc) {
       toast.error('Assets must be more than your debts');
-    } else if (totalDebts === totalAssets) {
+    } else if (totalDebts === totalAssetsCalc) {
       toast.info('You are not giving zakaat because your debts and assets are equal');
     } else {
       navigate('/step3');
+    }
+  };
+
+  const handleFocus = (e) => {
+    if (e.target.value === '0') {
+      e.target.value = '';
     }
   };
 
@@ -59,6 +82,7 @@ const Step2 = () => {
                 type="number"
                 value={arrears}
                 onChange={(e) => setArrears(parseFloat(e.target.value) || 0)}
+                onFocus={handleFocus}
                 className="w-full border p-2"
                 placeholder="Add the current value of your arrears"
               />
@@ -69,6 +93,7 @@ const Step2 = () => {
                 type="number"
                 value={bills}
                 onChange={(e) => setBills(parseFloat(e.target.value) || 0)}
+                onFocus={handleFocus}
                 className="w-full border p-2"
                 placeholder="Add the current value of your bills"
               />
@@ -79,6 +104,7 @@ const Step2 = () => {
                 type="number"
                 value={longTermDebts}
                 onChange={(e) => setLongTermDebts(parseFloat(e.target.value) || 0)}
+                onFocus={handleFocus}
                 className="w-full border p-2"
                 placeholder="Add the current value of your long-term debts"
               />
@@ -89,8 +115,31 @@ const Step2 = () => {
                 type="number"
                 value={receivables}
                 onChange={(e) => setReceivables(parseFloat(e.target.value) || 0)}
+                onFocus={handleFocus}
                 className="w-full border p-2"
                 placeholder="Add the current value of your receivables"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block">Gold (grams):</label>
+              <input
+                type="number"
+                value={goldGrams}
+                onChange={(e) => setGoldGrams(parseFloat(e.target.value) || 0)}
+                onFocus={handleFocus}
+                className="w-full border p-2"
+                placeholder="Enter gold in grams"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block">Silver (grams):</label>
+              <input
+                type="number"
+                value={silverGrams}
+                onChange={(e) => setSilverGrams(parseFloat(e.target.value) || 0)}
+                onFocus={handleFocus}
+                className="w-full border p-2"
+                placeholder="Enter silver in grams"
               />
             </div>
             <div className="mb-4">
@@ -99,6 +148,7 @@ const Step2 = () => {
                 type="number"
                 value={totalAssets}
                 onChange={(e) => setTotalAssets(parseFloat(e.target.value) || 0)}
+                onFocus={handleFocus}
                 className="w-full border p-2"
                 placeholder="Enter total assets"
               />
